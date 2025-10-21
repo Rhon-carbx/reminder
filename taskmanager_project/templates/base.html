@@ -1,0 +1,57 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="{% static 'javascript/base_script.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/base_style.css' %}">
+    <meta charset="UTF-8">
+    <title>{% block title %}My Site{% endblock %}</title>
+    <!-- Add Font Awesome and Google Fonts links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap" rel="stylesheet">
+    
+    
+</head>
+<body>
+    <nav class="sidebar">
+        
+        <i id="btn" class="fa-solid fa-bars"></i>
+        <ul class="nav-links">
+            <li>
+                <a href="{% url 'all' %}">
+                <i class="fa-solid fa-house"></i>
+                <span>All</span>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'about' %}">
+                <i class="fa-solid fa-circle-info"></i>
+                <span>About</span>
+                </a>
+            </li>
+             <li>
+                <a href="{% url 'add' %}">
+                <i class="fa-solid fa-sliders"></i>
+                <span>Add task</span>
+                </a>
+            </li>
+             <li>
+                <a href="/completed_task">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Completed task</span>
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    
+</body>
+</html>

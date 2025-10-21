@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <script src="{% static 'javascript/completed_task_script.js' %}"></script>
+  <meta charset="UTF-8">
+  <title>Completed Tasks</title>
+  <link rel="stylesheet" href="{% static 'css/completed_task_style.css' %}">
+</head>
+<body>
+
+  <h2>Completed Tasks</h2>
+  <a href="{% url 'all' %}"
+        style="display: inline-block; text-align: center; width: 100%; background-color: #ccc; color: #333; text-decoration: none; padding: 10px; font-size: 15px; border-radius: 8px; margin-top: 10px; display: block;">
+        ⬅️ Back to Dashboard
+      </a>
+
+  <ul class="task-list">
+    <li class="task-item">
+      <span>Finish UI Design</span>
+      <button class="delete-btn" onclick="deleteTask(this)">Delete</button>
+    </li>
+  </ul>
+
+  
+  {% endblock %}
+</body>
+</html>
